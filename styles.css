@@ -429,15 +429,28 @@ html[data-theme="dark"] .toggle-thumb {
 }
 
 .hero-photo-block {
-  border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--surface-strong);
+  background: linear-gradient(160deg, var(--surface-strong), var(--surface-soft));
   width: clamp(220px, 30vw, 320px);
+  height: clamp(220px, 30vw, 320px);
   aspect-ratio: 1 / 1;
   padding: 0.42rem;
   box-shadow: var(--shadow);
   overflow: hidden;
   justify-self: center;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.hero-photo-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .profile-photo {
@@ -448,6 +461,9 @@ html[data-theme="dark"] .toggle-thumb {
   object-fit: cover;
   object-position: center 12%;
   border-radius: 50%;
+  border: 2px solid var(--surface-strong);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-actions {
