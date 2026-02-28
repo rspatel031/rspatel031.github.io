@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Patel | Profile</title>
+    <meta
+      name="description"
+      content="Personal profile website for Rahul Patel with responsive design and theme switcher."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        var key = "profile-theme";
+        var storedTheme = null;
+        try {
+          storedTheme = window.localStorage.getItem(key);
+        } catch (error) {
+          storedTheme = null;
+        }
+        var hasStoredTheme =
+          storedTheme === "light" || storedTheme === "dark";
+        var supportsMatchMedia = typeof window.matchMedia === "function";
+        var systemTheme =
+          supportsMatchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute(
+          "data-theme",
+          hasStoredTheme ? storedTheme : systemTheme
+        );
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="header-intro">
+        <a class="brand" href="#home">Rahul Patel</a>
+        <p class="header-note">Senior DevOps Engineer</p>
+      </div>
+      <nav class="header-nav" id="header-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-tools">
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="header-nav"
+          aria-expanded="false"
+        >
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle color mode"
+          aria-pressed="false"
+        >
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="toggle-label">Dark mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content" id="home">
+      <section class="hero card">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow">Senior DevOps Engineer</p>
+            <h1>Rahul Patel - AWS Cloud, Kubernetes, and CI/CD Automation.</h1>
+            <p class="intro">
+              Turning cloud complexity into seamless operations with resilient,
+              scalable, and automated infrastructure. I build high-performance
+              DevOps systems that accelerate delivery and improve reliability.
+            </p>
+            <div class="hero-meta">
+              <span>Ahmedabad, Gujarat, India</span>
+              <span>5+ years in cloud and DevOps engineering</span>
+              <span>AWS, Kubernetes, Docker, Jenkins, Terraform</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Contact Rahul</a>
+              <a class="btn btn-secondary" href="#experience"
+                >View Experience</a
+              >
+            </div>
+          </div>
+          <aside class="hero-photo-block" aria-label="Profile photo">
+            <img
+              class="profile-photo"
+              src="assets/profile-photo.jpeg"
+              alt="Rahul Patel professional profile photo"
+              loading="lazy"
+              decoding="async"
+            />
+          </aside>
+        </div>
+      </section>
+
+      <section class="fact-strip card" aria-label="Key highlights">
+        <article class="fact-item">
+          <h3>6+ Years</h3>
+          <p>Experience at eInfochips</p>
+        </article>
+        <article class="fact-item">
+          <h3>4 Certifications</h3>
+          <p>AWS, Kubernetes, and Azure validated</p>
+        </article>
+        <article class="fact-item">
+          <h3>Cloud Native Focus</h3>
+          <p>Kubernetes, CI/CD, observability, automation</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card summary" id="about">
+          <h2>Professional Summary</h2>
+          <p>
+            I design and optimise cloud-native infrastructures that are secure,
+            scalable, and production-ready. My focus is to transform
+            infrastructure challenges into automated workflows and dependable
+            release systems.
+          </p>
+          <p>
+            I combine hands-on DevOps execution with strategic ownership -
+            from Kubernetes migration and AWS EKS operations to CI/CD
+            acceleration, monitoring excellence, and infrastructure governance.
+          </p>
+        </article>
+
+        <article class="card mission">
+          <h2>Mission</h2>
+          <p>
+            Simplify complex infrastructure, accelerate software delivery, and
+            enable teams to innovate without worrying about downtime or
+            operational bottlenecks.
+          </p>
+        </article>
+
+        <article class="card strengths" id="skills">
+          <h2>Core Skills</h2>
+          <ul class="chip-list">
+            <li>AWS Cloud Management</li>
+            <li>Microsoft Azure</li>
+            <li>Kubernetes and Docker</li>
+            <li>CI/CD with Jenkins and Bitrise</li>
+            <li>Terraform</li>
+            <li>Amazon EC2</li>
+            <li>Amazon RDS</li>
+            <li>Grafana and Prometheus</li>
+            <li>Datadog</li>
+            <li>ELK Stack</li>
+            <li>PyTest Automation</li>
+            <li>GitHub PR Reviews</li>
+            <li>Cross-functional Collaboration</li>
+          </ul>
+        </article>
+
+        <article class="card experience" id="experience">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <h3>Senior Engineer Level 1 - eInfochips</h3>
+              <p class="timeline-meta">Apr 2023 - Present | Ahmedabad</p>
+              <ul>
+                <li>
+                  Led critical DevOps initiatives aligned with business delivery
+                  goals.
+                </li>
+                <li>
+                  Optimised Docker workflows and CI/CD pipelines using Jenkins
+                  and Bitrise.
+                </li>
+                <li>
+                  Migrated Kubernetes clusters to AWS EKS and revamped Grafana
+                  dashboards with MySQL integration.
+                </li>
+                <li>
+                  Managed App Store Connect and Google Play Console releases
+                  for mobile apps.
+                </li>
+                <li>
+                  Implemented standardised infrastructure practices and ELK
+                  logging for stronger operational governance.
+                </li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <h3>Engineer - DevOps Track, eInfochips</h3>
+              <p class="timeline-meta">Feb 2021 - Mar 2023 | Ahmedabad</p>
+              <ul>
+                <li>
+                  Managed Kubernetes clusters and microservices for stable
+                  production systems.
+                </li>
+                <li>
+                  Integrated Datadog, Prometheus, and Grafana for proactive
+                  monitoring.
+                </li>
+                <li>
+                  Streamlined CI/CD pipelines and improved deployment
+                  efficiency.
+                </li>
+                <li>
+                  Collaborated with cross-functional teams to troubleshoot
+                  deployment and connectivity issues.
+                </li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <h3>Engineer - Automation, eInfochips</h3>
+              <p class="timeline-meta">Feb 2020 - Jan 2021 | Ahmedabad</p>
+              <ul>
+                <li>
+                  Automated testing workflows with PyTest to accelerate quality
+                  validation.
+                </li>
+                <li>
+                  Defined test requirements with customers across multiple
+                  devices.
+                </li>
+                <li>
+                  Conducted regression testing and validated defect resolution.
+                </li>
+                <li>
+                  Reviewed GitHub pull requests to enforce quality practices.
+                </li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <h3>Project Trainee - eInfochips</h3>
+              <p class="timeline-meta">Jul 2019 - Feb 2020 | Ahmedabad</p>
+              <ul>
+                <li>
+                  Monitored enterprise systems in rotational shifts to support
+                  24x7 operations.
+                </li>
+                <li>
+                  Automated REST API validation and monitoring tasks.
+                </li>
+                <li>
+                  Validated customer dashboards for operational accuracy.
+                </li>
+                <li>
+                  Resolved video device issues to improve customer experience.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </article>
+
+        <article class="card certifications" id="certifications">
+          <h2>Certifications</h2>
+          <ul class="detail-list">
+            <li>AWS Certified Solutions Architect - Associate</li>
+            <li>AWS Certified Developer - Associate</li>
+            <li>CKA: Certified Kubernetes Administrator</li>
+            <li>Microsoft Certified: Azure Fundamentals</li>
+          </ul>
+        </article>
+
+        <article class="card education" id="education">
+          <h2>Education</h2>
+          <ul class="detail-list">
+            <li>
+              Bachelor of Engineering, Computer Engineering (2016 - 2019)<br />
+              Government Engineering College, Bhavnagar
+            </li>
+            <li>
+              Diploma, Computer Engineering (2013 - 2016)<br />
+              Bhagwan Mahavir Polytechnic
+            </li>
+          </ul>
+        </article>
+
+        <article class="card awards" id="awards">
+          <h2>Honors and Awards</h2>
+          <ul class="detail-list">
+            <li>Core Value - Self Improvement through Continuous Learning</li>
+            <li>Pat On The Back</li>
+            <li>Pat On The Back</li>
+            <li>iEnrichLives Award - Continuous Learning</li>
+          </ul>
+        </article>
+
+        <article class="card contact" id="contact">
+          <h2>Contact</h2>
+          <p>Available for DevOps and cloud engineering collaborations.</p>
+          <div class="contact-links">
+            <a href="mailto:rspatel031@gmail.com">Gmail</a>
+            <a
+              href="https://www.linkedin.com/in/rspatel031"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn Profile</a
+            >
+            <a
+              href="https://medium.com/@rspatel031"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Medium Blog</a
+            >
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rahul Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
